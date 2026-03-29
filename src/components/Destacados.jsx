@@ -1,7 +1,7 @@
 import CarCard from "../components/CarCard";
 import carImg from "../assets/carImg.png";
-import carImg2 from "../assets/carImg2.png";
-import carImg3 from "../assets/carImg3.png";
+import carImg2 from "../assets/volkswagen-tiguan.webp";
+import carImg3 from "../assets/jeep-cherokee.webp";
 import "../styles/Destacados.css";
 
 export default function Destacados() {
@@ -35,18 +35,18 @@ export default function Destacados() {
         <CarCard
           imagen={carImg2}
           categoria="SUV"
-          marca="Geely"
-          modelo="Coolray"
-          precioUsd="$19,900"
-          precioSoles="S/.67,660"
-          anio="2023"
+          marca="VOLKSWAGEN"
+          modelo="Tiguan"
+          precioUsd="$25,500"
+          precioSoles="S/.86,700"
+          anio="2020"
           transmision="Automático"
           combustible="Gasolina"
         />
         <CarCard
           imagen={carImg3}
           categoria="SUV"
-          marca="Jeep"
+          marca="JEEP"
           modelo="Cherokee"
           precioUsd="$23,500"
           precioSoles="S/.79,900"

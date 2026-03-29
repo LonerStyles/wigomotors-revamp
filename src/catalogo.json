@@ -13,7 +13,7 @@
   },
   {
     "id": 2,
-    "imagen": "/src/assets/kia-sonet.png",
+    "imagen": "/src/assets/kia-sonet.webp",
     "categoria": "SUV",
     "marca": "KIA",
     "modelo": "Sonet",
@@ -25,7 +25,7 @@
   },
   {
     "id": 3,
-    "imagen": "/src/assets/geely-coolray.png",
+    "imagen": "/src/assets/geely-coolray.webp",
     "categoria": "SUV",
     "marca": "GEELY",
     "modelo": "Coolray",
@@ -37,7 +37,7 @@
   },
   {
     "id": 4,
-    "imagen": "/src/assets/hyundai-accent.png",
+    "imagen": "/src/assets/hyundai-accent.webp",
     "categoria": "SEDAN",
     "marca": "HYUNDAI",
     "modelo": "Accent BN7",
@@ -49,7 +49,7 @@
   },
   {
     "id": 5,
-    "imagen": "/src/assets/changan-hunter.png",
+    "imagen": "/src/assets/changan-hunter.webp",
     "categoria": "PICK UP",
     "marca": "CHANGAN",
     "modelo": "New F70",
@@ -61,7 +61,7 @@
   },
   {
     "id": 6,
-    "imagen": "/src/assets/jeep-compass.png",
+    "imagen": "/src/assets/jeep-compass.webp",
     "categoria": "SUV",
     "marca": "JEEP",
     "modelo": "Compass",
@@ -73,7 +73,7 @@
   },
   {
     "id": 7,
-    "imagen": "/src/assets/mg-zx.png",
+    "imagen": "/src/assets/mg-zx.webp",
     "categoria": "SUV",
     "marca": "MG",
     "modelo": "ZX",
@@ -85,7 +85,7 @@
   },
   {
     "id": 8,
-    "imagen": "/src/assets/hyundai-creta.png",
+    "imagen": "/src/assets/hyundai-creta.webp",
     "categoria": "SUV",
     "marca": "HYUNDAI",
     "modelo": "Creta",
@@ -97,7 +97,7 @@
   },
   {
     "id": 9,
-    "imagen": "/src/assets/kia-k3.png",
+    "imagen": "/src/assets/kia-k3.webp",
     "categoria": "SEDAN",
     "marca": "KIA",
     "modelo": "K3",
@@ -109,7 +109,7 @@
   },
   {
     "id": 10,
-    "imagen": "/src/assets/geely-okavango.png",
+    "imagen": "/src/assets/geely-okavango.webp",
     "categoria": "SUV",
     "marca": "GEELY",
     "modelo": "Okavango",
@@ -121,7 +121,7 @@
   },
   {
     "id": 11,
-    "imagen": "/src/assets/changan-cs35.png",
+    "imagen": "/src/assets/changan-cs35.webp",
     "categoria": "SUV",
     "marca": "CHANGAN",
     "modelo": "CS35 Plus",
@@ -133,7 +133,7 @@
   },
   {
     "id": 12,
-    "imagen": "/src/assets/hyundai-tucson.png",
+    "imagen": "/src/assets/hyundai-tucson.webp",
     "categoria": "SUV",
     "marca": "HYUNDAI",
     "modelo": "Tucson",
@@ -141,6 +141,30 @@
     "precioSoles": "S/.86,666",
     "anio": "2024",
     "transmision": "Mecánico",
+    "combustible": "Gasolina"
+  },
+  {
+    "id": 13,
+    "imagen": "/src/assets/volkswagen-tiguan.webp",
+    "categoria": "SUV",
+    "marca": "VOLKSWAGEN",
+    "modelo": "Tiguan",
+    "precioUsd": "$25,500",
+    "precioSoles": "S/.86,700",
+    "anio": "2020",
+    "transmision": "Automático",
+    "combustible": "Gasolina"
+  },
+  {
+    "id": 14,
+    "imagen": "/src/assets/jeep-cherokee.webp",
+    "categoria": "SUV",
+    "marca": "JEEP",
+    "modelo": "Cherokee",
+    "precioUsd": "$23,500",
+    "precioSoles": "S/.79,900",
+    "anio": "2016",
+    "transmision": "Automático",
     "combustible": "Gasolina"
   }
 ]

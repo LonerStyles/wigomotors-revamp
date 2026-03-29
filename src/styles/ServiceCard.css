@@ -1,0 +1,58 @@
+.service-card-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 24px;
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.service-card-item:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+  border-color: #d1d5db;
+}
+
+.service-icon-wrapper {
+  background-color: #fff2f1;
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.service-img-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.service-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.service-card-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.service-card-description {
+  font-family: "Outfit", sans-serif;
+  font-size: 13px;
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0;
+}

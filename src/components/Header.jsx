@@ -10,16 +10,28 @@ export default function Header({
   return (
     <header className={`main-header ${className}`}>
       <div className="header-container">
-
         <div className="header-logo-wrapper">
-          <img className="header-logo-img" alt="Logo Wigo" src={logoWigo} />
+          <a href="#">
+            <img className="header-logo-img" alt="Logo Wigo" src={logoWigo} />
+          </a>
         </div>
 
         <nav className="header-nav">
-          <a href="#nuevos" className="nav-link">NUEVOS</a>
-          <a href="#seminuevos" className="nav-link">SEMINUEVOS</a>
-          <a href="#servicies-section" className="nav-link">SERVICIOS</a>
-          <a href="#vende-tu-auto" className="nav-link">VENDE TU AUTO</a>
+          <a href="#nuevos" className="nav-link">
+            NUEVOS
+          </a>
+          <a href="#seminuevos" className="nav-link">
+            SEMINUEVOS
+          </a>
+          <a href="#seminuevos" className="nav-link">
+            CATÁLOGO
+          </a>
+          <a href="#servicies-section" className="nav-link">
+            SERVICIOS
+          </a>
+          <a href="#vende-tu-auto" className="nav-link">
+            VENDE TU AUTO
+          </a>
         </nav>
 
         <div className="header-actions">
@@ -33,7 +45,6 @@ export default function Header({
             <img src={usericon} alt="Icono Usuario" />
           </button>
         </div>
-        
       </div>
     </header>
   );

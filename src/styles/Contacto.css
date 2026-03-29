@@ -1,0 +1,259 @@
+.form-input-grid *,
+.form-input-grid *::before,
+.form-input-grid *::after {
+  box-sizing: border-box !important;
+}
+
+.contacto-view-bg {
+  width: 100%;
+  background-color: #f3f4f6;
+  min-height: 100vh;
+  padding: 40px 20px 90px 40px;
+  font-family: "Outfit", sans-serif;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contacto-container {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.details-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+.back-arrow {
+  color: #ff1e2d;
+  font-weight: bold;
+}
+.breadcrumb-link {
+  color: #ff1e2d;
+  cursor: pointer;
+}
+.breadcrumb-separator {
+  color: #a3a3a3;
+}
+.breadcrumb-current {
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.contacto-header-main {
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 800px;
+  align-self: center;
+}
+
+.contacto-header-main h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+}
+
+.contacto-header-main p {
+  font-size: 15px;
+  color: #636e72;
+  line-height: 1.6;
+}
+
+.form-container-card {
+  background: #ffffff;
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.2fr 2fr;
+  border: 1px solid #eaeaea;
+}
+
+.form-info-panel {
+  background: #1a1a1a;
+  padding: 50px 40px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-info-panel .panel-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.form-info-panel .panel-title span.highlight {
+  color: #ff1e2d;
+}
+
+.form-info-panel .panel-description {
+  font-size: 14px;
+  color: #a3a3a3;
+  margin-bottom: 35px;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.form-info-panel .benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+}
+.form-info-panel .benefit-icon {
+  background: rgba(255, 30, 45, 0.15);
+  color: #ff1e2d;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.form-content-area {
+  padding: 50px;
+  background: white;
+}
+.form-content-header {
+  margin-bottom: 30px;
+}
+.form-content-header h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 5px;
+}
+.form-content-header p {
+  font-size: 13px;
+  color: #636e72;
+}
+
+.form-input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-input-grid .full-width {
+  grid-column: span 2;
+}
+
+.input-field-group {
+  position: relative;
+}
+.input-field-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.input-field-group input,
+.input-field-group select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #e1e4e8;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #1a1a1a;
+  transition: all 0.3s ease;
+  outline: none;
+  background: #ffffff;
+}
+
+.input-field-group input:focus,
+.input-field-group select:focus {
+  border-color: #ff1e2d;
+  box-shadow: 0 0 0 4px rgba(255, 30, 45, 0.05);
+}
+
+.input-field-group input::placeholder {
+  color: #b2bec3;
+  font-weight: 300;
+}
+
+.form-checkbox-group {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.checkbox-control {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12px;
+  color: #636e72;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.checkbox-control input {
+  width: 16px;
+  height: 16px;
+  accent-color: #ff1e2d;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.btn-submit-contacto {
+  width: 100%;
+  background: #ff1e2d;
+  color: white;
+  padding: 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(255, 30, 45, 0.15);
+}
+
+.btn-submit-contacto:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(255, 30, 45, 0.25);
+  background: #d61421;
+}
+
+@media (max-width: 850px) {
+  .form-container-card {
+    grid-template-columns: 1fr;
+  }
+  .form-content-area {
+    padding: 35px 25px;
+  }
+}
+
+@media (max-width: 550px) {
+  .form-input-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-input-grid .full-width {
+    grid-column: span 1;
+  }
+  .contacto-header-main h1 {
+    font-size: 26px;
+  }
+}

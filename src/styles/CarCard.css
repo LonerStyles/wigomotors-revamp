@@ -20,7 +20,7 @@
   height: 251px;
 }
 
-.car-image {
+.car-card .car-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
