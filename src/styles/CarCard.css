@@ -1,0 +1,133 @@
+.car-card {
+  background-color: #ffffff;
+  border: 1px solid #c9c9c9;
+  border-radius: 17px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+  overflow: hidden;
+  font-family: "Outfit", "Inter", sans-serif;
+  transition: box-shadow 0.3s ease; 
+}
+
+.car-card:hover {
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.404);
+}
+
+.car-image-container {
+  width: 100%;
+  height: 251px;
+}
+
+.car-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.car-card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 8px;
+}
+
+.car-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.car-type {
+  color: #838383;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.car-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.car-actions img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.car-title {
+  font-size: 22px;
+  margin: 0;
+  display: flex;
+  gap: 5px;
+}
+
+.car-title .brand {
+  font-weight: 600;
+}
+.car-title .model {
+  font-weight: 300;
+}
+
+.price-label {
+  font-size: 13px;
+  color: #000;
+  font-weight: 300;
+}
+
+.car-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  color: #ee3124;
+}
+
+.car-price-row .currency {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.car-price-row .amount {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.car-price-row .separator {
+  color: #ee3124;
+  margin: 0 2px;
+}
+
+.car-specs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #727272;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.car-specs .separator {
+  font-weight: 200;
+}
+
+.car-btn-cotizar {
+  background-color: #ee3124;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+.car-btn-cotizar:hover {
+  background-color: #c4261d;
+}

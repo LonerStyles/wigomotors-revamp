@@ -1,0 +1,163 @@
+.main-footer {
+  width: 100%;
+  font-family: "Outfit", sans-serif;
+}
+
+.main-footer .footer-top {
+  background-color: #4b4b4b;
+  padding: 50px 0 40px 0;
+}
+
+.main-footer .footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.main-footer .footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.main-footer .footer-logo {
+  width: 130px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.main-footer .brand-info p {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 300;
+  margin: 4px 0;
+  line-height: 1.4;
+}
+
+.main-footer .col-label {
+  color: #ee3124;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.main-footer .col-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-footer .col-links li {
+  margin-bottom: 10px;
+}
+
+.main-footer .col-links a {
+  color: #ffffff;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+.main-footer .col-links a:hover {
+  color: #ee3124;
+}
+
+.main-footer .v-line {
+  width: 1px;
+  height: 135px;
+  background-color: rgba(255, 255, 255, 0.685);
+  align-self: center;
+}
+
+.main-footer .footer-middle {
+  background-color: #4b4b4b;
+  padding: 0 20px 20px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.main-footer .disclaimer-text {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.5;
+  padding-top: 20px;
+}
+
+.main-footer .footer-bottom {
+  background-color: #ee3124;
+  padding: 15px 0;
+}
+
+.main-footer .bottom-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.main-footer .bottom-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.main-footer .copyright-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 400;
+}
+
+.main-footer .copyright-group strong {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+}
+
+.main-footer .americar-logo {
+  height: 16px;
+  width: auto;
+}
+
+.main-footer .social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.main-footer .social-links img {
+  width: auto;
+  height: 14px;
+  transition: transform 0.2s ease;
+}
+
+.main-footer .social-links img:hover {
+  transform: scale(1.15);
+}
+
+@media (max-width: 768px) {
+  .main-footer .footer-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .main-footer .v-line {
+    display: none;
+  }
+
+  .main-footer .bottom-container {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
