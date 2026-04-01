@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CarCard from "../components/CarCard";
 import carImg from "../assets/carImg.png";
 import carImg2 from "../assets/volkswagen-tiguan.webp";
@@ -15,9 +16,11 @@ export default function Destacados() {
           </p>
         </div>
 
-        <button className="btn-ver-todos">
-          <span>Ver Todos →</span>
-        </button>
+        <Link to="/vehiculos">
+          <button className="btn-ver-todos">
+            <span>Ver Todos →</span>
+          </button>
+        </Link>
       </div>
 
       <div className="card-container">

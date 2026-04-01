@@ -37,6 +37,11 @@
   line-height: 1.4;
 }
 
+.main-footer .brand-info-title{
+  font-weight: 500 !important;
+  font-size: 14px;
+}
+
 .main-footer .col-label {
   color: #ee3124;
   font-size: 16px;

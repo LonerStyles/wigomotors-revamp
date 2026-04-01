@@ -15,12 +15,12 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Catalogo" element={<Catalogo />} />
-        <Route path="/Favoritos" element={<Favoritos />} />
-        <Route path="/Details" element={<Details />} />
-        <Route path="/Comparator" element={<Comparator />} />
-        <Route path="/Contacto" element={<Contacto />} />
-        <Route path="/TestDrive" element={<TestDrive />} />
+        <Route path="/vehiculos" element={<Catalogo />} />
+        <Route path="/favoritos" element={<Favoritos />} />
+        <Route path="/detalle" element={<Details />} />
+        <Route path="/comparar" element={<Comparator />} />
+        <Route path="/contacto" element={<Contacto />} />
+        <Route path="/test-drive" element={<TestDrive />} />
       </Routes>
       <Footer />
     </>

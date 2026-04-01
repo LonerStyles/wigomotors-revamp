@@ -2,6 +2,7 @@
   {
     "id": 1,
     "imagen": "/src/assets/carImg.png",
+    "tipo": "Seminuevo",
     "categoria": "SEDAN",
     "marca": "MG",
     "modelo": "GT",
@@ -14,6 +15,7 @@
   {
     "id": 2,
     "imagen": "/src/assets/kia-sonet.webp",
+    "tipo": "Nuevo",
     "categoria": "SUV",
     "marca": "KIA",
     "modelo": "Sonet",
@@ -26,6 +28,7 @@
   {
     "id": 3,
     "imagen": "/src/assets/geely-coolray.webp",
+    "tipo": "Nuevo",
     "categoria": "SUV",
     "marca": "GEELY",
     "modelo": "Coolray",
@@ -38,6 +41,7 @@
   {
     "id": 4,
     "imagen": "/src/assets/hyundai-accent.webp",
+    "tipo": "Nuevo",
     "categoria": "SEDAN",
     "marca": "HYUNDAI",
     "modelo": "Accent BN7",
@@ -49,7 +53,8 @@
   },
   {
     "id": 5,
-    "imagen": "/src/assets/changan-hunter.webp",
+    "imagen": "/src/assets/changan-f70.webp",
+    "tipo": "Nuevo",
     "categoria": "PICK UP",
     "marca": "CHANGAN",
     "modelo": "New F70",
@@ -62,6 +67,7 @@
   {
     "id": 6,
     "imagen": "/src/assets/jeep-compass.webp",
+    "tipo": "Seminuevo",
     "categoria": "SUV",
     "marca": "JEEP",
     "modelo": "Compass",
@@ -74,6 +80,7 @@
   {
     "id": 7,
     "imagen": "/src/assets/mg-zx.webp",
+    "tipo": "Nuevo",
     "categoria": "SUV",
     "marca": "MG",
     "modelo": "ZX",
@@ -86,6 +93,7 @@
   {
     "id": 8,
     "imagen": "/src/assets/hyundai-creta.webp",
+    "tipo": "Nuevo",
     "categoria": "SUV",
     "marca": "HYUNDAI",
     "modelo": "Creta",
@@ -98,6 +106,7 @@
   {
     "id": 9,
     "imagen": "/src/assets/kia-k3.webp",
+    "tipo": "Nuevo",
     "categoria": "SEDAN",
     "marca": "KIA",
     "modelo": "K3",
@@ -110,6 +119,7 @@
   {
     "id": 10,
     "imagen": "/src/assets/geely-okavango.webp",
+    "tipo": "Nuevo",
     "categoria": "SUV",
     "marca": "GEELY",
     "modelo": "Okavango",
@@ -122,6 +132,7 @@
   {
     "id": 11,
     "imagen": "/src/assets/changan-cs35.webp",
+    "tipo": "Nuevo",
     "categoria": "SUV",
     "marca": "CHANGAN",
     "modelo": "CS35 Plus",
@@ -134,6 +145,7 @@
   {
     "id": 12,
     "imagen": "/src/assets/hyundai-tucson.webp",
+    "tipo": "Nuevo",
     "categoria": "SUV",
     "marca": "HYUNDAI",
     "modelo": "Tucson",
@@ -146,6 +158,7 @@
   {
     "id": 13,
     "imagen": "/src/assets/volkswagen-tiguan.webp",
+    "tipo": "Seminuevo",
     "categoria": "SUV",
     "marca": "VOLKSWAGEN",
     "modelo": "Tiguan",
@@ -158,12 +171,143 @@
   {
     "id": 14,
     "imagen": "/src/assets/jeep-cherokee.webp",
+    "tipo": "Seminuevo",
     "categoria": "SUV",
     "marca": "JEEP",
     "modelo": "Cherokee",
     "precioUsd": "$23,500",
     "precioSoles": "S/.79,900",
     "anio": "2016",
+    "transmision": "Automático",
+    "combustible": "Gasolina"
+  },
+  {
+    "id": 15,
+    "imagen": "/src/assets/volvo-fh 540.png",
+    "tipo": "Nuevo",
+    "categoria": "CAMION",
+    "marca": "VOLVO",
+    "modelo": "FH 540",
+    "precioUsd": "$145,000",
+    "precioSoles": "S/.493,000",
+    "anio": "2024",
+    "transmision": "Automático",
+    "combustible": "Diésel"
+  },
+  {
+    "id": 16,
+    "imagen": "/src/assets/scania-r450.png",
+    "tipo": "Nuevo",
+    "categoria": "CAMION",
+    "marca": "SCANIA",
+    "modelo": "R450",
+    "precioUsd": "$138,000",
+    "precioSoles": "S/.469,200",
+    "anio": "2024",
+    "transmision": "Automático",
+    "combustible": "Diésel"
+  },
+  {
+    "id": 17,
+    "imagen": "/src/assets/mercedes-benz-actros.png",
+    "tipo": "Seminuevo",
+    "categoria": "CAMION",
+    "marca": "MERCEDES-BENZ",
+    "modelo": "Actros",
+    "precioUsd": "$85,000",
+    "precioSoles": "S/.289,000",
+    "anio": "2020",
+    "transmision": "Automático",
+    "combustible": "Diésel"
+  },
+  {
+    "id": 18,
+    "imagen": "/src/assets/kenworth-t680.png",
+    "tipo": "Seminuevo",
+    "categoria": "CAMION",
+    "marca": "KENWORTH",
+    "modelo": "T680",
+    "precioUsd": "$98,000",
+    "precioSoles": "S/.333,200",
+    "anio": "2021",
+    "transmision": "Mecánico",
+    "combustible": "Diésel"
+  },
+  {
+    "id": 19,
+    "imagen": "/src/assets/isuzu-forward.png",
+    "tipo": "Nuevo",
+    "categoria": "CAMION",
+    "marca": "ISUZU",
+    "modelo": "Forward",
+    "precioUsd": "$45,900",
+    "precioSoles": "S/.156,060",
+    "anio": "2024",
+    "transmision": "Mecánico",
+    "combustible": "Diésel"
+  },
+  {
+    "id": 20,
+    "imagen": "/src/assets/foton-auman est.png",
+    "tipo": "Nuevo",
+    "categoria": "CAMION",
+    "marca": "FOTON",
+    "modelo": "Auman EST",
+    "precioUsd": "$62,500",
+    "precioSoles": "S/.212,500",
+    "anio": "2023",
+    "transmision": "Mecánico",
+    "combustible": "Diésel"
+  },
+  {
+    "id": 21,
+    "imagen": "/src/assets/toyota-rav4.png",
+    "tipo": "Nuevo",
+    "categoria": "SUV",
+    "marca": "TOYOTA",
+    "modelo": "RAV4",
+    "precioUsd": "$31,990",
+    "precioSoles": "S/.108,766",
+    "anio": "2024",
+    "transmision": "Automático",
+    "combustible": "Gasolina"
+  },
+  {
+    "id": 22,
+    "imagen": "/src/assets/nissan-versa.png",
+    "tipo": "Nuevo",
+    "categoria": "SEDAN",
+    "marca": "NISSAN",
+    "modelo": "Versa",
+    "precioUsd": "$15,490",
+    "precioSoles": "S/.52,666",
+    "anio": "2024",
+    "transmision": "Mecánico",
+    "combustible": "Gasolina"
+  },
+  {
+    "id": 23,
+    "imagen": "/src/assets/ford-mustang gt.png",
+    "tipo": "Seminuevo",
+    "categoria": "COUPE",
+    "marca": "FORD",
+    "modelo": "Mustang GT",
+    "precioUsd": "$42,000",
+    "precioSoles": "S/.142,800",
+    "anio": "2021",
+    "transmision": "Automático",
+    "combustible": "Gasolina"
+  },
+  {
+    "id": 24,
+    "imagen": "/src/assets/ford-explorer.png",
+    "tipo": "Seminuevo",
+    "categoria": "SUV",
+    "marca": "FORD",
+    "modelo": "Explorer",
+    "precioUsd": "$35,500",
+    "precioSoles": "S/.120,700",
+    "anio": "2022",
     "transmision": "Automático",
     "combustible": "Gasolina"
   }

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import trucksBg from "../assets/trucks-bg.png";
 import "../styles/SolucionesCarga.css";
 
@@ -20,7 +21,9 @@ export default function SolucionesCarga() {
           el camión perfecto para tu negocio.
         </p>
 
-        <button className="content-btn">Ver Línea Pesada</button>
+        <Link to="/vehiculos">
+          <button className="content-btn">Ver Línea Pesada</button>
+        </Link>
       </div>
     </div>
   );

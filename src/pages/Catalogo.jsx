@@ -1,16 +1,32 @@
+import { useState, useEffect } from "react";
 import SidebarFilters from "../components/SidebarFilters";
 import CarCard from "../components/CarCard";
 import autosData from "../catalogo.json";
 import "../styles/Catalogo.css";
 
 export default function Catalogo() {
+  const [paginaActual, setPaginaActual] = useState(1);
+  const elementosPorPagina = 9;
+  const indiceFinal = paginaActual * elementosPorPagina;
+  const indiceInicio = indiceFinal - elementosPorPagina;
+  const autosVisibles = autosData.slice(indiceInicio, indiceFinal);
+  const totalPaginas = Math.ceil(autosData.length / elementosPorPagina);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [paginaActual]);
+
   return (
     <div className="catalogo-view-container">
       <div className="breadcrumbs">
         <a href="#">
           <span className="breadcrumbs-start">← Vehiculos</span>
         </a>
-        <span className="breadcrumbs-line">|</span> <span className="breadcrumbs-current">Todo</span>
+        <span className="breadcrumbs-line">|</span>{" "}
+        <span className="breadcrumbs-current">Todo</span>
       </div>
 
       <h1 className="view-title">Autos, SUV’s y Camionetas en Wigo Motors</h1>
@@ -24,7 +40,7 @@ export default function Catalogo() {
           <button className="btn-all-filter">Todo</button>
           <div className="vertical-divider"></div>
           <span className="vehicles-count">
-            Mostrando <strong>202</strong> Vehículos
+            Mostrando <strong>{autosData.length}</strong> Vehículos
           </span>
         </div>
 
@@ -62,7 +78,7 @@ export default function Catalogo() {
       <div className="main-catalog-layout">
         <SidebarFilters />
         <div className="cards-grid">
-          {autosData.map((auto) => (
+          {autosVisibles.map((auto) => (
             <CarCard
               key={auto.id}
               imagen={auto.imagen}
@@ -80,17 +96,36 @@ export default function Catalogo() {
       </div>
 
       <div className="catalog-pagination">
-        <button className="page-btn page-btn-previous page-btn-inactive">
+        <button
+          className={`page-btn page-btn-previous ${paginaActual === 1 ? "page-btn-inactive" : ""}`}
+          onClick={() => setPaginaActual(paginaActual - 1)}
+          disabled={paginaActual === 1}
+        >
           ← Anterior
         </button>
         <div className="page-line"></div>
-        <button className="page-btn active">1</button>
-        <button className="page-btn">2</button>
-        <button className="page-btn">3</button>
-        <span className="dots">...</span>
-        <button className="page-btn">12</button>
+        {[...Array(totalPaginas)].map((_, index) => {
+          const numeroPagina = index + 1;
+          return (
+            <button
+              key={numeroPagina}
+              className={`page-btn ${paginaActual === numeroPagina ? "active" : ""}`}
+              onClick={() => setPaginaActual(numeroPagina)}
+            >
+              {numeroPagina}
+            </button>
+          );
+        })}
+
         <div className="page-line"></div>
-        <button className="page-btn page-btn-next">Siguiente →</button>
+
+        <button
+          className={`page-btn page-btn-next ${paginaActual === totalPaginas ? "pagina-btn-inactive" : ""}`}
+          onClick={() => setPaginaActual(paginaActual + 1)}
+          disabled={paginaActual === totalPaginas}
+        >
+          Siguiente →
+        </button>
       </div>
     </div>
   );

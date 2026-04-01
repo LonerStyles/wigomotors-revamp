@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/AdCard.css";
 
 export const AdCard = ({ image, title, subtitle }) => {
@@ -11,9 +12,11 @@ export const AdCard = ({ image, title, subtitle }) => {
         <div className="title">{title}</div>
         <p className="subtitle">{subtitle}</p>
 
-        <button className="btn-cotizar">
-          <span className="btn-text">COTIZAR</span>
-        </button>
+        <Link to="contacto" >
+          <button className="btn-cotizar">
+            <span className="btn-text">COTIZAR</span>
+          </button>
+        </Link>
       </div>
     </div>
   );

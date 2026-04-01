@@ -17,7 +17,7 @@ export default function Footer() {
               className="footer-logo"
             />
             <div className="brand-info">
-              <p>WIGO</p>
+              <p className="brand-info-title">Ventas</p>
               <p>Central de citas: 7005510 o 017005510</p>
               <p>De lunes a domingo de 8:00 am a 8:00 pm</p>
             </div>
@@ -92,7 +92,8 @@ export default function Footer() {
 
           <div className="copyright-group">
             <span className="copyright-text">
-              © 2026 <strong>Wigo</strong> | Todos los derechos reservados | Marca distribuida por |
+              © 2026 <strong>Wigo</strong> | Todos los derechos reservados |
+              Marca distribuida por |
             </span>
             <img src={americarBrand} alt="Americar" className="americar-logo" />
           </div>

@@ -1,5 +1,6 @@
 * {
   font-family: Outfit, Helvetica;
+  text-decoration: none;
 }
 
 body {
@@ -8,3 +9,4 @@ body {
   background-color: #f0f0f0;
   box-sizing: border-box;
 }
+

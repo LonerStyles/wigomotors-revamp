@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import favoriteIcon2 from "../assets/favoriteIcon2.svg";
 import shareIcon from "../assets/shareIcon.svg";
 import "../styles/CarCard.css";
@@ -51,7 +52,9 @@ export default function CarCard({
           <span>{combustible}</span>
         </div>
 
-        <button className="car-btn-cotizar">COTIZAR</button>
+        <Link to="/detalle">
+          <button className="car-btn-cotizar">COTIZAR</button>
+        </Link>
       </div>
     </div>
   );

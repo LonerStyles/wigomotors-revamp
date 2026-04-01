@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import sliderBg from "../assets/slider-bg.png";
 import "../styles/SliderPromo.css";
@@ -27,7 +28,9 @@ export default function SliderPromo() {
           compra.
         </p>
 
-        <button className="slider-btn">Obtener Bono</button>
+        <Link to="/contacto">
+          <button className="slider-btn">Obtener Bono</button>
+        </Link>
       </div>
 
       <button className="slider-arrow arrow-right" aria-label="Siguiente">

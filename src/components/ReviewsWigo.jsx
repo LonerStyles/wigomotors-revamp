@@ -76,7 +76,7 @@ export default function ReviewsWigo() {
           <div className="rating-summary">
             <span className="rating-number">4.8</span>
             <span className="stars-gold">★★★★★</span>
-            <span className="rating-count">(2480 reseñas)</span>
+            <span className="rating-count">(4480 reseñas)</span>
           </div>
         </div>
 

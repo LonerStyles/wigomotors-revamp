@@ -1,13 +1,37 @@
 import { useState } from "react";
 import FormSelect from "./FormSelect";
 import bannerBg from "../assets/banner-BG.png";
+import autosData from "../catalogo.json";
 import "../styles/Banner.css";
+
+// Estados Iniciales FormSelect con valor por defecto
+const opcionesMarcasDef = [
+  { value: "", label: "Seleccionar", disabled: true },
+  ...[...new Set(autosData.map((auto) => auto.marca))].map((marca) => ({
+    value: marca,
+    label: marca.charAt(0).toUpperCase() + marca.slice(1).toLowerCase(),
+  })),
+];
+const opcionesTiposDef = [
+  { value: "", label: "Seleccionar", disabled: true },
+  ...[...new Set(autosData.map((auto) => auto.tipo))].map((tipo) => ({
+    value: tipo,
+    label: tipo.charAt(0).toUpperCase() + tipo.slice(1).toLowerCase(),
+  })),
+];
+const opcionesCategoriasDef = [
+  { value: "", label: "Seleccionar", disabled: true },
+  ...[...new Set(autosData.map((auto) => auto.categoria))].map((categoria) => ({
+    value: categoria,
+    label: categoria.charAt(0).toUpperCase() + categoria.slice(1).toLowerCase(),
+  })),
+];
 
 export default function Banner() {
   const [searchData, setSearchData] = useState({
-    tipo: "nuevo",
-    categoria: "sedan",
-    marca: "ford",
+    tipo: "",
+    categoria: "",
+    marca: "",
     precio: "20000",
   });
 
@@ -37,10 +61,7 @@ export default function Banner() {
               name="tipo"
               value={searchData.tipo}
               onChange={handleSelectChange}
-              options={[
-                { value: "nuevo", label: "Nuevo" },
-                { value: "seminuevo", label: "Seminuevo" },
-              ]}
+              options={opcionesTiposDef}
             />
           </div>
 
@@ -50,10 +71,7 @@ export default function Banner() {
               name="categoria"
               value={searchData.categoria}
               onChange={handleSelectChange}
-              options={[
-                { value: "sedan", label: "Sedan" },
-                { value: "suv", label: "SUV" },
-              ]}
+              options={opcionesCategoriasDef}
             />
           </div>
 
@@ -63,10 +81,7 @@ export default function Banner() {
               name="marca"
               value={searchData.marca}
               onChange={handleSelectChange}
-              options={[
-                { value: "ford", label: "Ford" },
-                { value: "kia", label: "Kia" },
-              ]}
+              options={opcionesMarcasDef}
             />
           </div>
 
@@ -79,6 +94,9 @@ export default function Banner() {
               options={[
                 { value: "20000", label: "$20,000" },
                 { value: "30000", label: "$30,000" },
+                { value: "50000", label: "$40,000" },                
+                { value: "100000", label: "$100,000" },
+                { value: "200000", label: "$200,000" },
               ]}
             />
           </div>
