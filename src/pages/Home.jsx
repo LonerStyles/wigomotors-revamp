@@ -18,7 +18,7 @@ export default function Home() {
       <SliderPromo />
       <SolucionesCarga />
       <ReviewsWigo />
-      <NuestrosServicios />
+      <NuestrosServicios id="services-section" />
     </main>
   );
 }

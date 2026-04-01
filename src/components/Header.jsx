@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 import "../styles/Header.css";
 
 export default function Header({
@@ -11,27 +12,27 @@ export default function Header({
     <header className={`main-header ${className}`}>
       <div className="header-container">
         <div className="header-logo-wrapper">
-          <a href="#">
-            <img className="header-logo-img" alt="Logo Wigo" src={logoWigo} />
-          </a>
+          <NavLink to="/">
+            <img className="header-logo-img" alt="Logo Wigo" src={logoWigo} />          
+          </NavLink>
         </div>
 
         <nav className="header-nav">
-          <a href="#nuevos" className="nav-link">
+          <NavLink to="/Catalogo" className="nav-link">
             NUEVOS
-          </a>
-          <a href="#seminuevos" className="nav-link">
+          </NavLink>
+          <NavLink to="/Catalogo" className="nav-link">
             SEMINUEVOS
-          </a>
-          <a href="#seminuevos" className="nav-link">
+          </NavLink>
+          <NavLink to="/Catalogo" className="nav-link">
             CATÁLOGO
-          </a>
-          <a href="#servicies-section" className="nav-link">
+          </NavLink>
+          <NavLink to="/Contacto" className="nav-link">
             SERVICIOS
-          </a>
-          <a href="#vende-tu-auto" className="nav-link">
+          </NavLink>
+          <NavLink to="/Contacto" className="nav-link">
             VENDE TU AUTO
-          </a>
+          </NavLink>          
         </nav>
 
         <div className="header-actions">
