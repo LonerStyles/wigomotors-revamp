@@ -131,3 +131,76 @@
   position: relative;
   width: 70px;
 }
+
+/* --- AJUSTES BASE PARA FLEXIBILIDAD --- */
+.brands {
+  height: auto; /* Cambiamos height fijo por auto para que crezca si los logos bajan */
+  padding-bottom: 40px;
+  width: 100%;
+  max-width: 1200px; /* Evita que se estire demasiado en pantallas gigantes */
+  margin: 50px auto 0 auto;
+}
+
+.brands .brands-logos {
+  display: flex; /* Cambiado de inline-flex a flex */
+  flex-wrap: wrap; /* CRITICO: Permite que los logos bajen a la siguiente línea */
+  justify-content: center;
+  align-items: flex-end;
+  gap: 40px;
+  height: auto;
+  width: 100%;
+  padding: 0 20px;
+}
+
+@media (max-width: 1366px) {
+  .brands .brands-logos {
+    gap: 30px;
+  }
+  
+  .brands .KIA, .brands .div-2, .brands .HYUNDAI, .brands .CHEVROLET, .brands .PEUGEOT {
+    width: 120px;
+  }
+
+  .brands .text-wrapper {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .brands .brands-logos {
+    gap: 20px;
+  }
+  
+  .brands img {
+    max-width: 100px;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .brands {
+    margin-top: 30px;
+    border-radius: 0;
+  }
+
+  .brands .text-wrapper {
+    width: 90%;
+    font-size: 14px;
+    margin-top: 25px;
+  }
+
+  .brands .brands-logos {
+    gap: 15px;
+    justify-content: space-evenly;
+  }
+
+  .brands .div {
+    font-size: 14px;
+    height: 30px;
+  }
+
+  .brands .KIA, .brands .div-2, .brands .HYUNDAI, .brands .CHEVROLET, .brands .PEUGEOT {
+    width: 100px;
+    gap: 10px;
+  }
+}

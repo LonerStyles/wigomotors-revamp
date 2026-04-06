@@ -206,7 +206,70 @@
   margin: 0 40px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1366px) {
+  .catalogo-view-container {
+    max-width: 100%;
+    padding: 30px 20px;
+  }
+
+  .view-title {
+    font-size: 24px;
+  }
+
+  .view-description {
+    margin-bottom: 30px;
+    font-size: 14px;
+  }
+
+  .top-bar-catalog {
+    padding: 10px 15px;
+    gap: 10px;
+  }
+
+  .top-bar-left {
+    gap: 8px;
+  }
+
+  .vehicles-count {
+    font-size: 13px;
+  }
+
+  .search-wrapper input {
+    padding: 8px 12px 8px 35px;
+  }
+
+  .top-bar-right select {
+    min-width: 140px;
+    font-size: 13px;
+  }
+
+  .main-catalog-layout {
+    gap: 20px;
+  }
+
+  .cards-grid {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .top-bar-catalog {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .top-bar-center {
+    order: 3;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .top-bar-left, .top-bar-right {
+    flex: 1;
+    justify-content: space-between;
+  }
+
   .cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -216,11 +279,44 @@
   .main-catalog-layout {
     flex-direction: column;
   }
-  .sidebar-filters {
-    width: 100%;
+
+  .view-title {
+    font-size: 20px;
   }
+
+  .top-bar-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .vertical-divider {
+    display: none;
+  }
+
+  .catalog-pagination {
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+
+  .page-btn-previous, 
+  .page-btn-next {
+    width: 100px;
+    font-size: 12px;
+  }
+
+  .page-line {
+    margin: 0 10px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
   .cards-grid {
     grid-template-columns: 1fr;
-    justify-items: center;
+  }
+  
+  .top-bar-catalog {
+    padding: 15px;
   }
 }

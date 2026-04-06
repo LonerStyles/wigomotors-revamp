@@ -131,3 +131,62 @@
 .car-btn-cotizar:hover {
   background-color: #c4261d;
 }
+
+@media (max-width: 1366px) {
+  .car-card {
+    width: 310px;
+  }
+  
+  .car-image-container {
+    height: 220px;
+  }
+}
+
+@media (max-width: 992px) {
+  .car-card {
+    width: 100%;
+    max-width: 400px; 
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .car-card {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 12px;
+  }
+
+  .car-image-container {
+    height: 200px;
+  }
+
+  .car-card-content {
+    padding: 15px;
+    gap: 5px;
+  }
+
+  .car-title {
+    font-size: 18px;
+  }
+
+  .car-price-row .amount {
+    font-size: 16px;
+  }
+
+  .car-specs {
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  .car-price-row {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 380px) {
+    .car-price-row .separator {
+        display: none;
+    }
+}
