@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import ServiceCard from "../components/ServiceCard";
 import carImg from "../assets/carImg.png";
 import favoriteIcon2 from "../assets/favoriteIcon2.svg";
@@ -168,9 +169,11 @@ export default function Details() {
           </div>
 
           <button className="btn-action-submit btn-red">COTIZAR</button>
-          <button className="btn-action-submit btn-dark">
-            SOLICITAR TEST DRIVE
-          </button>
+          <Link to="/test-drive">
+            <button className="btn-action-submit btn-dark">
+              SOLICITAR TEST DRIVE
+            </button>
+          </Link>         
           <button className="btn-action-submit btn-green">
             <img src={wspIcon} alt="wspIcon" />
             WHATSAPP
