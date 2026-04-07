@@ -168,12 +168,14 @@ export default function Details() {
             </div>
           </div>
 
-          <button className="btn-action-submit btn-red">COTIZAR</button>
+          <Link to="/contacto">
+            <button className="btn-action-submit btn-red">COTIZAR</button>
+          </Link>
           <Link to="/test-drive">
             <button className="btn-action-submit btn-dark">
               SOLICITAR TEST DRIVE
             </button>
-          </Link>         
+          </Link>
           <button className="btn-action-submit btn-green">
             <img src={wspIcon} alt="wspIcon" />
             WHATSAPP

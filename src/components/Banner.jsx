@@ -47,7 +47,7 @@ export default function Banner() {
           <img className="banner-img" alt="Banner Auto" src={bannerBg} />
 
           <div className="banner-overlay-text">
-            <h1 className="banner-title">Encuentra tu proximo auto</h1>
+            <h1 className="banner-title">Encuentra tu próximo auto</h1>
             <p className="banner-subtitle">
               Seguridad, confianza y las mejores marcas en un solo lugar.
             </p>
