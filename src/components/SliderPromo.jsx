@@ -1,34 +1,34 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect ,useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import sliderBg from "../assets/slider-bg.png";
-import sliderBg2 from "../assets/sliderBg2.webp";
-import sliderBg3 from "../assets/sliderBg3.webp";
+import sliderBg from "../assets/sliderBg.png";
+import sliderBg2 from "../assets/sliderBg2.png";
+import sliderBg3 from "../assets/sliderBg3.png";
 import "../styles/SliderPromo.css";
 
 const slides = [
   {
     id: 1,
-    image: sliderBg,
-    brand: "DONFENG MOTOR PERÚ",
-    title: "¡Gran cierra Puertas de Temporada!",
-    subtitle: "Participa de los juegos y gana premios sorpresa por tu reserva o compra.",
+    image: sliderBg3,
+    brand: "OMODA | JAECOO",
+    title: "Nuevos modelos se unen a la familia",
+    subtitle: "WIGO MOTORS",
     link: "/catalogo"
   },
   {
     id: 2,
     image: sliderBg2,
-    brand: "OFERTAS EXCLUSIVAS",
-    title: "Renueva tu camioneta hoy",
-    subtitle: "Bonos de hasta $3,000 en modelos seleccionados.",
+    brand: "WIGO MOTORS",
+    title: "Nissan Kicks nuevo modelo",
+    subtitle: "APTITUDE TO DISRUPT",
     link: "/catalogo"
   },
   {
     id: 3,
-    image: sliderBg3,
-    brand: "SERVICIO TÉCNICO",
-    title: "Mantenimiento Preventivo",
-    subtitle: "Agenda tu cita y recibe un diagnóstico gratuito.",
+    image: sliderBg,
+    brand: "PEUGEOT",
+    title: "Gran venta varios modelos",
+    subtitle: "Sin cuota inicial, accede a garantias y mantenimiento incluidos",
     link: "/servicios"
   }
 ]
