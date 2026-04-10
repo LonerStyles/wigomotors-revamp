@@ -4,6 +4,7 @@ import shareIcon from "../assets/shareIcon.svg";
 import "../styles/CarCard.css";
 
 export default function CarCard({
+  id,
   imagen,
   categoria = "SEDAN",
   marca = "MG",
@@ -17,7 +18,9 @@ export default function CarCard({
   return (
     <div className="car-card">
       <div className="car-image-container">
-        <img className="car-image" alt={`${marca} ${modelo}`} src={imagen} />
+        <Link to={`/detalle/${id}`}>
+          <img className="car-image" alt={`${marca} ${modelo}`} src={imagen} />
+        </Link>
       </div>
 
       <div className="car-card-content">
@@ -52,7 +55,7 @@ export default function CarCard({
           <span>{combustible}</span>
         </div>
 
-        <Link to="/detalle">
+        <Link to={`/detalle/${id}`}>
           <button className="car-btn-cotizar">COTIZAR</button>
         </Link>
       </div>

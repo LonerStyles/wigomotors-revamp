@@ -17,7 +17,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/vehiculos" element={<Catalogo />} />
         <Route path="/favoritos" element={<Favoritos />} />
-        <Route path="/detalle" element={<Details />} />
+        <Route path="/detalle/:id" element={<Details />} />
         <Route path="/comparar" element={<Comparator />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/test-drive" element={<TestDrive />} />

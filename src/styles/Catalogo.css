@@ -206,6 +206,133 @@
   margin: 0 40px;
 }
 
+.native-input {
+  accent-color: #ee3124;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.native-slider {
+  width: 100%;
+  accent-color: #ee3124;
+  cursor: pointer;
+}
+
+/* Estilo para los filtros de tipo lista */
+.filter-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.filter-label:hover {
+  color: #1a1a1a;
+}
+
+/* Estilo para los Selects */
+.filter-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: #fff;
+  font-family: "Outfit", sans-serif;
+  font-size: 14px;
+  color: #1a1a1a;
+  outline: none;
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  border-color: #ee3124;
+}
+
+.options-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-display {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.filters-sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 20px;
+  height: fit-content;
+}
+
+.filter-main-label {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+}
+
+.filter-subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #374151;
+}
+
+.options-grid{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.filter-hr {
+  border: 0;
+  border-top: 1px solid #f3f4f6;
+  margin-bottom: 20px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #4b5563;
+}
+.price-range-slider {
+  width: 100%;
+  accent-color: #ee3124;
+  cursor: pointer;
+}
+
+.price-display {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #1a1a1a;
+}
+
+@media (max-width: 992px) {
+  .main-catalog-layout {
+    flex-direction: column;
+  }
+  .filters-sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
 @media (max-width: 1366px) {
   .catalogo-view-container {
     max-width: 100%;

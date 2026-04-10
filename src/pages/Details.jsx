@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import autosData from "../catalogo.json"
 import ServiceCard from "../components/ServiceCard";
 import carImg from "../assets/carImg.png";
 import favoriteIcon2 from "../assets/favoriteIcon2.svg";
@@ -21,24 +22,32 @@ import accesoriosIcon from "../assets/WI_-_Repuestos_y_accesorios2.svg";
 import "../styles/Details.css";
 
 export default function Details() {
-  const precioAutoUSD = 15900;
-  const precioAutoPEN = 54060;
-
+  const { id } = useParams();
+  const [auto, setAuto] = useState(null)
   const [cuotaInicial, setCuotaInicial] = useState(5000);
   const [numCuotas, setNumCuotas] = useState(36);
 
-  const calcularCuotaMensual = () => {
-    const saldoAFinanciar = precioAutoPEN - cuotaInicial;
-    if (saldoAFinanciar <= 0) return 0;
+  useEffect(() => {
+    const autoEncontrado = autosData.find((a) => a.id === parseInt(id));
+    if (autoEncontrado) {
+      setAuto(autoEncontrado);
+      const solesLimpio = parseInt(autoEncontrado.precioSoles.replace(/\D/g, ""))
+      setCuotaInicial(Math.round(solesLimpio * 0.20));
+    }
+    window.scrollTo(0, 0);
+  }, [id]);
 
+  if (!auto) return <div style={{ padding: "100px", textAlign: "center" }}>Vehículo no encontrado</div>;
+
+  const solesNum = parseInt(auto.precioSoles.replace(/\D/g, ""));
+
+  const calcularCuotaMensual = () => {
+    const saldo = solesNum - cuotaInicial;
+    if (saldo <= 0) return 0;
     const tasaMensual = 0.15 / 12;
-    const cuota =
-      (saldoAFinanciar * tasaMensual) /
-      (1 - Math.pow(1 + tasaMensual, -numCuotas));
+    const cuota = (saldo * tasaMensual) / (1 - Math.pow(1 + tasaMensual, -numCuotas));
     return Math.round(cuota);
   };
-
-  const cuotaMensualCalculada = calcularCuotaMensual();
 
   const serviciosData = [
     {
@@ -83,72 +92,50 @@ export default function Details() {
         <span className="back-arrow">&larr;</span>
         <span className="breadcrumb-link">Vehículos</span>
         <span className="breadcrumb-separator">|</span>
-        <span className="breadcrumb-current">MG GT</span>
+        <span className="breadcrumb-current">{auto.marca} {auto.modelo}</span>
       </div>
 
-      <h1 className="details-main-title">MG GT Wigo Motors</h1>
+      <h1 className="details-main-title">{auto.marca} {auto.modelo} Wigo Motors</h1>
 
       <div className="details-main-layout">
         <div className="details-gallery-section">
           <div className="details-main-img-wrapper">
-            <img
-              src={carImg}
-              alt="Auto principal"
-              className="details-main-img"
-            />
+            <img src={auto.imagen} alt={auto.modelo} className="details-main-img" />
           </div>
           <div className="details-thumbnails-row">
-            <div className="thumb-item active">
-              <img src={carImg} alt="Vista 1" />
-            </div>
-            <div className="thumb-item">
-              <img src={carImg} alt="Vista 2" />
-            </div>
-            <div className="thumb-item">
-              <img src={carImg} alt="Vista 3" />
-            </div>
-            <div className="thumb-item">
-              <img src={carImg} alt="Vista 4" />
-            </div>
+            <div className="thumb-item active"><img src={auto.imagen} alt="1" /></div>
+            <div className="thumb-item"><img src={auto.imagen} alt="2" /></div>
+            <div className="thumb-item"><img src={auto.imagen} alt="3" /></div>
+            <div className="thumb-item"><img src={auto.imagen} alt="4" /></div>
           </div>
         </div>
 
         <div className="details-purchase-box">
           <div className="purchase-header">
-            <span className="car-segment">SEDAN</span>
+            <span className="car-segment">{auto.categoria}</span>
             <div className="purchase-actions-icons">
-              <button className="icon-action-btn">
-                <img src={favoriteIcon2} alt="icon" />
-              </button>
-              <button className="icon-action-btn">
-                <img src={shareIcon} alt="icon" />
-              </button>
+              <button className="icon-action-btn"><img src={favoriteIcon2} alt="icon" /></button>
+              <button className="icon-action-btn"><img src={shareIcon} alt="icon" /></button>
             </div>
           </div>
 
-          <h2 className="purchase-car-name">
-            MG <strong>GT</strong>
-          </h2>
-          <p className="purchase-car-version">MG GT 1.5L CVT SPORT</p>
+          <h2 className="purchase-car-name">{auto.marca} <strong>{auto.modelo}</strong></h2>
+          <p className="purchase-car-version">{auto.tipo} | {auto.anio}</p>
 
           <div className="purchase-pricing">
-            <span className="price-usd">
-              USD ${precioAutoUSD.toLocaleString()}
-            </span>
+            <span className="price-usd"> USD {auto.precioUsd} </span>
             <span className="price-divider">|</span>
-            <span className="price-pen">
-              S/.{precioAutoPEN.toLocaleString()}
-            </span>
+            <span className="price-pen">{auto.precioSoles}</span>
           </div>
 
           <div className="purchase-specs-grid">
             <div className="spec-box">
               <img src={yearIcon} alt="icon" />
-              <span className="spec-label">2023</span>
+              <span className="spec-label">{auto.anio}</span>
             </div>
             <div className="spec-box">
               <img src={fuelIcon} alt="icon" />
-              <span className="spec-label">GASOLINA</span>
+              <span className="spec-label">{auto.combustible}</span>
             </div>
             <div className="spec-box">
               <img src={displacementIcon} alt="icon" />
@@ -160,7 +147,7 @@ export default function Details() {
             </div>
             <div className="spec-box">
               <img src={transmissionIcon} alt="icon" />
-              <span className="spec-label">AUTOMÁTICA</span>
+              <span className="spec-label">{auto.transmision}</span>
             </div>
             <div className="spec-box">
               <img src={doorsIcon} alt="icon" />
@@ -186,41 +173,19 @@ export default function Details() {
       <div className="calculator-section-box">
         <h3 className="calculator-title">Calculadora Financiamiento</h3>
         <div className="calculator-form-row">
-          <div className="calc-price-display">
-            USD ${precioAutoUSD.toLocaleString()} | S/.
-            {precioAutoPEN.toLocaleString()}
-          </div>
-
-          <span className="calc-math-symbol">X</span>
-
+          <div className="calc-price-display">{auto.precioUsd} | {auto.precioSoles}</div>
           <div className="calc-input-group">
             <label>Inicial (S/.)</label>
-            <input
-              type="number"
-              value={cuotaInicial}
-              onChange={(e) => setCuotaInicial(Number(e.target.value))}
-              max={precioAutoPEN}
-            />
+            <input type="number" value={cuotaInicial} onChange={(e) => setCuotaInicial(Number(e.target.value))} />
           </div>
-
           <div className="calc-input-group">
-            <label>N° Cuotas (Meses)</label>
-            <select
-              value={numCuotas}
-              onChange={(e) => setNumCuotas(Number(e.target.value))}
-            >
-              <option value={12}>12 meses</option>
-              <option value={24}>24 meses</option>
-              <option value={36}>36 meses</option>
-              <option value={48}>48 meses</option>
+            <label>Cuotas</label>
+            <select value={numCuotas} onChange={(e) => setNumCuotas(Number(e.target.value))}>
+              {[12, 24, 36, 48].map(n => <option key={n} value={n}>{n} meses</option>)}
             </select>
           </div>
-
-          <span className="calc-math-symbol">=</span>
-
           <div className="calc-result-display">
-            S/.{cuotaInicial.toLocaleString()} INICIAL |{" "}
-            <strong>S/.{cuotaMensualCalculada.toLocaleString()} AL MES</strong>
+             Cuota estimada: <strong>S/.{calcularCuotaMensual().toLocaleString()}</strong>
           </div>
         </div>
       </div>
