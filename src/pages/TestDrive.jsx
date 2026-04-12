@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/TestDrive.css";
 
 export default function TestDrive() {
@@ -33,6 +33,10 @@ export default function TestDrive() {
     "04:00 PM",
     "05:30 PM",
   ];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="testdrive-container">
@@ -140,7 +144,7 @@ export default function TestDrive() {
             <span className="footer-notice">
               Se enviará una confirmación por correo.
             </span>
-            <Link to="/contacto" state={{motivo: "testdrive"}}>
+            <Link to="/contacto" state={{ motivo: "testdrive" }}>
               <button className="btn-next-action">Siguiente</button>
             </Link>
           </div>

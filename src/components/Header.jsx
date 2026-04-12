@@ -41,8 +41,7 @@ export default function Header({
           </NavLink>
 
           <NavLink
-            to="/contacto"
-            state={{ motivo: "servicio" }}
+            to="/#servicios"
             className="nav-link"
           >
             SERVICIOS

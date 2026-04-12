@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import autosData from "../catalogo.json";
 import "../styles/Comparator.css";
+import { WineOff } from "lucide-react";
 
 export default function Comparator() {
   const [selectedIds, setSelectedIds] = useState([]);
@@ -46,6 +47,10 @@ export default function Comparator() {
       ],
     },
   ];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="comparator-view-container">

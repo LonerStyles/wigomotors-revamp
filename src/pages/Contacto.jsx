@@ -1,37 +1,62 @@
 import { useLocation } from "react-router-dom";
 import "../styles/Contacto.css";
+import { useEffect } from "react";
 
 const PANELES_CONFIG = {
   cotizar: {
-    titulo: "Cotiza tu Próximo", highlight: "Auto",
-    descripcion: "Déjanos tus datos y un asesor especializado te contactará en menos de 15 minutos.",
-    beneficios: ["Bonos exclusivos de internet", "Tasas preferenciales", "Entrega inmediata"],
-    bgImage: null
+    titulo: "Cotiza tu Próximo",
+    highlight: "Auto",
+    descripcion:
+      "Déjanos tus datos y un asesor especializado te contactará en menos de 15 minutos.",
+    beneficios: [
+      "Bonos exclusivos de internet",
+      "Tasas preferenciales",
+      "Entrega inmediata",
+    ],
+    bgImage: null,
   },
   servicio: {
-    titulo: "Agenda tu", highlight: "Servicio",
-    descripcion: "Mantén tu vehículo en óptimas condiciones con nuestro servicio técnico certificado.",
-    beneficios: ["Técnicos certificados", "Repuestos originales", "Lavado de cortesía"],
-    bgImage: "url('/src/assets/serviceContact-bg.png')"
+    titulo: "Agenda tu",
+    highlight: "Servicio",
+    descripcion:
+      "Mantén tu vehículo en óptimas condiciones con nuestro servicio técnico certificado.",
+    beneficios: [
+      "Técnicos certificados",
+      "Repuestos originales",
+      "Lavado de cortesía",
+    ],
+    bgImage: "url('/src/assets/serviceContact-bg.png')",
   },
   vende: {
-    titulo: "Vende tu", highlight: "Auto",
-    descripcion: "Tasamos tu vehículo de forma gratuita y te ofrecemos el mejor precio de forma segura.",
+    titulo: "Vende tu",
+    highlight: "Auto",
+    descripcion:
+      "Tasamos tu vehículo de forma gratuita y te ofrecemos el mejor precio de forma segura.",
     beneficios: ["Tasación en 30 min", "Pago inmediato", "Trámites incluidos"],
-    bgImage: "url('/src/assets/vende-bg.jpg')" 
+    bgImage: "url('/src/assets/vende-bg.jpg')",
   },
   testdrive: {
-    titulo: "Solicita tu", highlight: "Test Drive",
-    descripcion: "Vive la experiencia de conducir el auto de tus sueños antes de tomar una decisión.",
-    beneficios: ["Prueba sin compromiso", "Asesoría en ruta", "Horarios flexibles"],
-    bgImage: "url('/src/assets/testdrive-bg.jpg')"
-  }
+    titulo: "Solicita tu",
+    highlight: "Test Drive",
+    descripcion:
+      "Vive la experiencia de conducir el auto de tus sueños antes de tomar una decisión.",
+    beneficios: [
+      "Prueba sin compromiso",
+      "Asesoría en ruta",
+      "Horarios flexibles",
+    ],
+    bgImage: "url('/src/assets/testdrive-bg.jpg')",
+  },
 };
 
 export default function Contacto() {
   const location = useLocation();
   const motivoActual = location.state?.motivo || "cotizar";
   const config = PANELES_CONFIG[motivoActual] || PANELES_CONFIG.cotizar;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   return (
     <div className="contacto-view-bg">
@@ -46,17 +71,22 @@ export default function Contacto() {
         <header className="contacto-header-main">
           <h1>Nosotros te contactamos</h1>
           <p>
-            Completa tus datos en el siguiente formulario y te contactaremos para 
-            resolver tus dudas, cotizar vehículos y ayudarte en lo que necesites.
+            Completa tus datos en el siguiente formulario y te contactaremos
+            para resolver tus dudas, cotizar vehículos y ayudarte en lo que
+            necesites.
           </p>
         </header>
 
         <div className="form-container-card">
-          <div className="form-info-panel" style={{ backgroundImage: config.bgImage }}>
+          <div
+            className="form-info-panel"
+            style={{ backgroundImage: config.bgImage }}
+          >
             {config.bgImage && <div className="panel-overlay"></div>}
             <div className="panel-content-wrapper">
               <h2 className="panel-title">
-                {config.titulo} <span className="highlight">{config.highlight}</span>
+                {config.titulo}{" "}
+                <span className="highlight">{config.highlight}</span>
               </h2>
               <p className="panel-description">{config.descripcion}</p>
               {config.beneficios.map((item, idx) => (
@@ -103,7 +133,9 @@ export default function Contacto() {
               <div className="input-field-group">
                 <label>Marca de Interés</label>
                 <select defaultValue="">
-                  <option value="" disabled>Seleccionar marca</option>
+                  <option value="" disabled>
+                    Seleccionar marca
+                  </option>
                   <option>MG</option>
                   <option>KIA</option>
                   <option>NISSAN</option>
@@ -113,7 +145,9 @@ export default function Contacto() {
               <div className="input-field-group">
                 <label>Modelo</label>
                 <select defaultValue="">
-                  <option value="" disabled>Seleccionar modelo</option>
+                  <option value="" disabled>
+                    Seleccionar modelo
+                  </option>
                   <option>MG GT</option>
                   <option>Sonet</option>
                 </select>
@@ -122,7 +156,9 @@ export default function Contacto() {
               <div className="input-field-group full-width">
                 <label>Sede Preferida</label>
                 <select defaultValue="">
-                  <option value="" disabled>Seleccionar sede</option>
+                  <option value="" disabled>
+                    Seleccionar sede
+                  </option>
                   <option>Sede Surquillo</option>
                   <option>Sede San Miguel</option>
                 </select>
@@ -138,7 +174,8 @@ export default function Contacto() {
                 <label className="checkbox-control">
                   <input type="checkbox" />
                   <span className="checkbox-text">
-                    Deseo recibir promociones y ofertas exclusivas de Wigo Motors.
+                    Deseo recibir promociones y ofertas exclusivas de Wigo
+                    Motors.
                   </span>
                 </label>
               </div>

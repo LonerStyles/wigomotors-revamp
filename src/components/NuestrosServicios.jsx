@@ -34,7 +34,7 @@ export default function NuestrosServicios() {
   ];
 
   return (
-    <div className="services-section">
+    <section className="services-section" id="servicios">
       <h2 className="services-title">Nuestros Servicios</h2>
 
       <div className="services-grid">
@@ -46,6 +46,6 @@ export default function NuestrosServicios() {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
