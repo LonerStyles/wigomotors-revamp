@@ -41,10 +41,14 @@ export default function CarCard({
 
         <div className="car-price-row">
           <span className="currency">USD</span>
-          <span className="amount">{precioUsd}</span>
+          <span className="amount">
+            {Number(precioUsd).toLocaleString("en-US")}
+          </span>
           <span className="separator">|</span>
           <span className="currency">PEN</span>
-          <span className="amount">{precioSoles}</span>
+          <span className="amount">
+            {Number(precioSoles).toLocaleString("en-US")}
+          </span>
         </div>
 
         <div className="car-specs">

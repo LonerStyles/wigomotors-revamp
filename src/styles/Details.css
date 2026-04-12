@@ -124,6 +124,11 @@
   font-size: 32px;
   margin: 10px 0 5px 0;
 }
+
+.purchase-car-name strong{
+  font-weight: 400;
+}
+
 .purchase-car-version {
   color: #7c7c7c;
   font-size: 14px;
@@ -211,6 +216,7 @@
   background-color: #ffffff;
   border-radius: 17px;
   padding: 30px;
+  padding-bottom: 35px;
   border: 1px solid #eaeaea;
   margin-bottom: 40px;
 }
@@ -229,6 +235,7 @@
   color: #ee3124;
   font-weight: 600;
   font-size: 18px;
+  padding-top: 17px;
 }
 .calc-math-symbol {
   font-size: 24px;
@@ -254,10 +261,23 @@
 .calc-result-display {
   font-size: 16px;
   color: #4b5563;
+  padding-top: 12px;
 }
 .calc-result-display strong {
   color: #ee3124;
   font-weight: 700;
+}
+
+.calc-label-symbol{
+  color: #ee3124;
+  font-weight: 500;
+  font-size: 25px;
+  padding-top: 15px;
+}
+
+.calc-result-detail{
+  color: #4b5563;
+  font-size: 14px;
 }
 
 .benefits-section-box {

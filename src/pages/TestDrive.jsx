@@ -140,7 +140,7 @@ export default function TestDrive() {
             <span className="footer-notice">
               Se enviará una confirmación por correo.
             </span>
-            <Link to="/contacto">
+            <Link to="/contacto" state={{motivo: "testdrive"}}>
               <button className="btn-next-action">Siguiente</button>
             </Link>
           </div>

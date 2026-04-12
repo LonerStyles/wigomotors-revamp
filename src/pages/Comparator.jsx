@@ -1,58 +1,48 @@
+import { useState } from "react";
+import autosData from "../catalogo.json";
 import "../styles/Comparator.css";
 
 export default function Comparator() {
+  const [selectedIds, setSelectedIds] = useState([]);
+
+  const addCar = (e) => {
+    const id = parseInt(e.target.value);
+    if (id && selectedIds.length < 3 && !selectedIds.includes(id)) {
+      setSelectedIds([...selectedIds, id]);
+    }
+    e.target.value = "";
+  };
+
+  const removeCar = (id) => {
+    setSelectedIds(selectedIds.filter((carId) => carId !== id));
+  };
+
+  const selectedCars = selectedIds.map((id) =>
+    autosData.find((auto) => auto.id === id),
+  );
+
   const comparisonData = [
     {
       category: "Motor y Rendimiento",
       specs: [
-        {
-          label: "Tipo de Motor",
-          values: ["2.5L Turbo Diesel", "2.0L Gasolina", "2.5L e-Skyactiv G"],
-        },
-        { label: "Potencia (HP)", values: ["188 HP", "154 HP", "187 HP"] },
-        {
-          label: "Transmisión",
-          values: ["Automática 7 Vel.", "Manual 6 Vel.", "Automática 6 Vel."],
-        },
+        { label: "Cilindrada", key: "displacement" },
+        { label: "Transmisión", key: "transmision" },
+        { label: "Combustible", key: "combustible" },
       ],
     },
     {
       category: "Dimensiones y Capacidad",
       specs: [
-        {
-          label: "Tracción",
-          values: ["4x4 con Selector", "2WD Delantera", "i-ACTIV AWD"],
-        },
-        {
-          label: "Capacidad Tanque",
-          values: ["21.1 Galones", "14.3 Galones", "15.3 Galones"],
-        },
-        { label: "Pasajeros", values: ["5 Adultos", "5 Adultos", "5 Adultos"] },
+        { label: "Tracción", key: "traccion" },
+        { label: "Puertas", key: "puertas" },
+        { label: "Categoría", key: "categoria" },
       ],
     },
     {
-      category: "Seguridad y Tecnología",
+      category: "Detalles Generales",
       specs: [
-        {
-          label: "Airbags",
-          values: [
-            "6 (Frontal/Lat/Cort)",
-            "6 (Frontal/Lat/Cort)",
-            "7 (Incluye Rodilla)",
-          ],
-        },
-        {
-          label: "Pantalla Info.",
-          values: [
-            '8" con Apple CarPlay',
-            '12" Panorámica',
-            '10.25" Mazda Connect',
-          ],
-        },
-        {
-          label: "Cámaras",
-          values: ["360° Monitor", "Retroceso HD", "360° View Monitor"],
-        },
+        { label: "Año", key: "anio" },
+        { label: "Versión", key: "modeloSpec" },
       ],
     },
   ];
@@ -70,51 +60,73 @@ export default function Comparator() {
         <h1>
           Compara tus <span>Favoritos</span>
         </h1>
-        <p>
-          Analiza las especificaciones técnicas lado a lado y toma la mejor
-          decisión.
-        </p>
+        <p>Selecciona hasta 3 vehículos para analizar sus especificaciones.</p>
+
+        <div style={{ marginTop: "20px" }}>
+          <select
+            onChange={addCar}
+            disabled={selectedIds.length >= 3}
+            className="btn-action"
+            style={{
+              background: "#fff",
+              color: "#1a1a1a",
+              border: "1px solid #ccc",
+            }}
+          >
+            <option value="">+ Añadir vehículo a comparar</option>
+            {autosData
+              .filter((auto) => !selectedIds.includes(auto.id))
+              .map((auto) => (
+                <option key={auto.id} value={auto.id}>
+                  {auto.marca} {auto.modelo} ({auto.anio})
+                </option>
+              ))}
+          </select>
+        </div>
       </header>
 
       <div className="comparison-table">
         <div className="comparison-grid">
           <div className="col-header label-col">Especificaciones</div>
 
-          <div className="col-header">
-            <button className="remove-btn">✕</button>
-            <img
-              src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=300"
-              className="car-image"
-              alt="Nissan"
-            />
-            <h3 className="car-name">Nissan Frontier</h3>
-            <span className="car-price">$38,990</span>
-            <button className="btn-action">COTIZAR</button>
-          </div>
-
-          <div className="col-header">
-            <button className="remove-btn">✕</button>
-            <img
-              src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=300"
-              className="car-image"
-              alt="Kia"
-            />
-            <h3 className="car-name">Kia Sportage</h3>
-            <span className="car-price">$29,450</span>
-            <button className="btn-action">COTIZAR</button>
-          </div>
-
-          <div className="col-header">
-            <button className="remove-btn">✕</button>
-            <img
-              src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&q=80&w=300"
-              className="car-image"
-              alt="Mazda"
-            />
-            <h3 className="car-name">Mazda CX-5</h3>
-            <span className="car-price">$34,200</span>
-            <button className="btn-action">COTIZAR</button>
-          </div>
+          {[0, 1, 2].map((index) => {
+            const auto = selectedCars[index];
+            return (
+              <div key={index} className="col-header">
+                {auto ? (
+                  <>
+                    <button
+                      className="remove-btn"
+                      onClick={() => removeCar(auto.id)}
+                    >
+                      ✕
+                    </button>
+                    <img
+                      src={auto.imagen}
+                      className="car-image"
+                      alt={auto.modelo}
+                    />
+                    <h3 className="car-name">
+                      {auto.marca} {auto.modelo}
+                    </h3>
+                    <span className="car-price">
+                      ${auto.precioUsd.toLocaleString()}
+                    </span>
+                    <button className="btn-action">COTIZAR</button>
+                  </>
+                ) : (
+                  <div
+                    className="empty-slot"
+                    style={{ padding: "40px 0", color: "#ccc" }}
+                  >
+                    <p style={{ fontSize: "12px", fontWeight: "700" }}>
+                      ESPACIO VACÍO
+                    </p>
+                  </div>
+                )}
+              </div>
+            );
+          })}
 
           {comparisonData.map((section, sectionIdx) => (
             <div key={sectionIdx} className="category-wrapper-contents">
@@ -122,9 +134,11 @@ export default function Comparator() {
               {section.specs.map((spec, specIdx) => (
                 <div key={specIdx} className="spec-row-contents">
                   <div className="row-label">{spec.label}</div>
-                  {spec.values.map((val, valIdx) => (
-                    <div key={valIdx} className="row-value">
-                      {val}
+                  {[0, 1, 2].map((carIdx) => (
+                    <div key={carIdx} className="row-value">
+                      {selectedCars[carIdx]
+                        ? selectedCars[carIdx][spec.key] || "N/A"
+                        : "—"}
                     </div>
                   ))}
                 </div>

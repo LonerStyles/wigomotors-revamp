@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect ,useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import sliderBg from "../assets/sliderBg.png";
 import sliderBg2 from "../assets/sliderBg2.png";
@@ -13,7 +13,7 @@ const slides = [
     brand: "OMODA | JAECOO",
     title: "Nuevos modelos se unen a la familia",
     subtitle: "WIGO MOTORS",
-    link: "/catalogo"
+    link: "/vehiculos?categoria=pasajeros",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const slides = [
     brand: "WIGO MOTORS",
     title: "Nissan Kicks nuevo modelo",
     subtitle: "APTITUDE TO DISRUPT",
-    link: "/catalogo"
+    link: "/vehiculos?categoria=pasajeros",
   },
   {
     id: 3,
@@ -29,22 +29,22 @@ const slides = [
     brand: "PEUGEOT",
     title: "Gran venta varios modelos",
     subtitle: "Sin cuota inicial, accede a garantias y mantenimiento incluidos",
-    link: "/servicios"
-  }
-]
+    link: "/vehiculos?categoria=pasajeros",
+  },
+];
 
 export default function SliderPromo() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-  });
+  }, []);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  }
+  }, []);
 
-  const goToSlide = (index) =>  {
+  const goToSlide = (index) => {
     setCurrentIndex(index);
   };
 
@@ -67,12 +67,16 @@ export default function SliderPromo() {
 
       <div className="slider-overlay"></div>
 
-      <button className="slider-arrow arrow-left" onClick={prevSlide} aria-label="Anterior">
+      <button
+        className="slider-arrow arrow-left"
+        onClick={prevSlide}
+        aria-label="Anterior"
+      >
         <ChevronLeft size={24} color="#ffffff" />
       </button>
 
       <div className="slider-content">
-        <span className="slider-brand">{slides[currentIndex].brand}</span>        
+        <span className="slider-brand">{slides[currentIndex].brand}</span>
         <h1 className="slider-title">{slides[currentIndex].title}</h1>
         <p className="slider-subtitle">{slides[currentIndex].subtitle}</p>
 
@@ -81,13 +85,17 @@ export default function SliderPromo() {
         </Link>
       </div>
 
-      <button className="slider-arrow arrow-right" onClick={nextSlide} aria-label="Siguiente">
+      <button
+        className="slider-arrow arrow-right"
+        onClick={nextSlide}
+        aria-label="Siguiente"
+      >
         <ChevronRight size={24} color="#ffffff" />
       </button>
 
       <div className="slider-dots">
         {slides.map((_, index) => (
-          <span 
+          <span
             key={index}
             className={`dot ${currentIndex === index ? "active" : ""}`}
             onClick={() => goToSlide(index)}

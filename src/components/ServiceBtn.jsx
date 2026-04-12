@@ -5,11 +5,11 @@ export const ServiceBtn = ({ iconName, label }) => {
   const iconSrc = new URL(`../assets/${iconName}`, import.meta.url).href;
 
   return (
-    <Link className="service-btn" to="/contacto">
-        <div className="service-icon-container">
-          <img src={iconSrc} alt={label} className="service-icon" />
-        </div>
-        <span className="service-label">{label}</span>
+    <Link className="service-btn" to="/contacto" state={{ motivo: "servicio" }}>
+      <div className="service-icon-container">
+        <img src={iconSrc} alt={label} className="service-icon" />
+      </div>
+      <span className="service-label">{label}</span>
     </Link>
   );
 };

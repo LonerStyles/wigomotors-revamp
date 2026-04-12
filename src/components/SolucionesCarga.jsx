@@ -21,7 +21,7 @@ export default function SolucionesCarga() {
           el camión perfecto para tu negocio.
         </p>
 
-        <Link to="/vehiculos">
+        <Link to="/vehiculos?categoria=pesados">
           <button className="content-btn">Ver Línea Pesada</button>
         </Link>
       </div>

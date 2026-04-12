@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import CarCard from "../components/CarCard";
-import carImg from "../assets/carImg.png";
-import carImg2 from "../assets/volkswagen-tiguan.webp";
-import carImg3 from "../assets/jeep-cherokee.webp";
+import autosData from "../catalogo.json";
 import "../styles/Destacados.css";
 
 export default function Destacados() {
+  const autosDestacados = autosData.slice(0, 3);
+  
   return (
     <div className="destacados-section">
       <div className="destacados-header">
@@ -16,7 +16,7 @@ export default function Destacados() {
           </p>
         </div>
 
-        <Link to="/vehiculos">
+        <Link to="/vehiculos?categoria=pasajeros">
           <button className="btn-ver-todos">
             <span>Ver Todos →</span>
           </button>
@@ -24,39 +24,9 @@ export default function Destacados() {
       </div>
 
       <div className="card-container">
-        <CarCard
-          imagen={carImg}
-          categoria="SEDAN"
-          marca="MG"
-          modelo="GT"
-          precioUsd="$15,900"
-          precioSoles="S/.54,060"
-          anio="2023"
-          transmision="Automático"
-          combustible="Gasolina"
-        />
-        <CarCard
-          imagen={carImg2}
-          categoria="SUV"
-          marca="VOLKSWAGEN"
-          modelo="Tiguan"
-          precioUsd="$25,500"
-          precioSoles="S/.86,700"
-          anio="2020"
-          transmision="Automático"
-          combustible="Gasolina"
-        />
-        <CarCard
-          imagen={carImg3}
-          categoria="SUV"
-          marca="JEEP"
-          modelo="Cherokee"
-          precioUsd="$23,500"
-          precioSoles="S/.79,900"
-          anio="2016"
-          transmision="Automático"
-          combustible="Gasolina"
-        />
+        {autosDestacados.map((auto) => (
+          <CarCard key={auto.id} {...auto}/>
+        ))}
       </div>
     </div>
   );

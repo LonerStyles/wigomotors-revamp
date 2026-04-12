@@ -107,7 +107,6 @@
   background-color: #c53030;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
   .banner-form-area {
     grid-template-columns: repeat(2, 1fr);

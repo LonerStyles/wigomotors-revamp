@@ -5,15 +5,12 @@
 }
 
 .contacto-view-bg {
-  width: 100%;
   background-color: #f3f4f6;
   min-height: 100vh;
-  padding: 40px 20px 90px 40px;
-  font-family: "Outfit", sans-serif;
-  box-sizing: border-box;
+  padding: 60px 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .contacto-container {
@@ -71,20 +68,52 @@
   background: #ffffff;
   width: 100%;
   border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
   display: grid;
-  grid-template-columns: 1.2fr 2fr;
+  grid-template-columns: 1.1fr 2fr;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+  min-height: 880px;
+  overflow: hidden;
   border: 1px solid #eaeaea;
 }
 
 .form-info-panel {
-  background: #1a1a1a;
-  padding: 50px 40px;
+  position: relative;
+  background-color: #1a1a1a;
+  background-size: cover;
+  background-position: center;
   color: white;
+  padding: 60px 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.panel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  z-index: 1;
+}
+
+.panel-content-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.form-container-card {
+  min-height: 750px;
+}
+
+.form-content-area {
+  padding: 50px 60px;
+  background: white;
 }
 
 .form-info-panel .panel-title {
@@ -148,7 +177,7 @@
 .form-input-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 20px 25px;
 }
 
 .form-input-grid .full-width {

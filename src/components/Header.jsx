@@ -18,19 +18,41 @@ export default function Header({
         </div>
 
         <nav className="header-nav">
-          <NavLink to="/vehiculos" className="nav-link">
+          <NavLink
+            to="/vehiculos?categoria=pasajeros&estado=nuevo"
+            className="nav-link"
+          >
             NUEVOS
           </NavLink>
-          <NavLink to="/vehiculos" className="nav-link">
+
+          <NavLink
+            to="/vehiculos?categoria=pasajeros&estado=seminuevo"
+            className="nav-link"
+          >
             SEMINUEVOS
           </NavLink>
+
+          <NavLink to="/vehiculos?categoria=pesados" className="nav-link">
+            CAMIONES
+          </NavLink>
+
           <NavLink to="/comparar" className="nav-link">
             COMPARAR
           </NavLink>
-          <NavLink to="/contacto" className="nav-link">
+
+          <NavLink
+            to="/contacto"
+            state={{ motivo: "servicio" }}
+            className="nav-link"
+          >
             SERVICIOS
           </NavLink>
-          <NavLink to="/contacto" className="nav-link">
+
+          <NavLink
+            to="/contacto"
+            state={{ motivo: "vende" }}
+            className="nav-link"
+          >
             VENDE TU AUTO
           </NavLink>
         </nav>
@@ -52,3 +74,4 @@ export default function Header({
     </header>
   );
 }
+  

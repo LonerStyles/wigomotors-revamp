@@ -1,10 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import FormSelect from "./FormSelect";
 import bannerBg from "../assets/banner-BG.png";
 import autosData from "../catalogo.json";
 import "../styles/Banner.css";
 
-// Estados Iniciales FormSelect con valor por defecto
 const opcionesMarcasDef = [
   { value: "", label: "Seleccionar", disabled: true },
   ...[...new Set(autosData.map((auto) => auto.marca))].map((marca) => ({
@@ -28,16 +28,30 @@ const opcionesCategoriasDef = [
 ];
 
 export default function Banner() {
+  const navigate = useNavigate();
   const [searchData, setSearchData] = useState({
     tipo: "",
     categoria: "",
     marca: "",
-    precio: "20000",
+    precio: "200000",
   });
 
   const handleSelectChange = (e) => {
     const { name, value } = e.target;
     setSearchData((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  const handleSearch = () => {
+    const categoriaUrl =
+      searchData.categoria === "CAMION" ? "pesados" : "pasajeros";
+    const estadoUrl = searchData.tipo.toLowerCase() || "todos";
+
+    navigate(`/vehiculos?categoria=${categoriaUrl}&estado=${estadoUrl}`, {
+      state: {
+        marcaInit: searchData.marca,
+        precioInit: Number(searchData.precio),
+      },
+    });
   };
 
   return (
@@ -94,14 +108,16 @@ export default function Banner() {
               options={[
                 { value: "20000", label: "$20,000" },
                 { value: "30000", label: "$30,000" },
-                { value: "50000", label: "$40,000" },                
+                { value: "50000", label: "$40,000" },
                 { value: "100000", label: "$100,000" },
                 { value: "200000", label: "$200,000" },
               ]}
             />
           </div>
 
-          <button className="form-search-btn">Buscar</button>
+          <button className="form-search-btn" onClick={handleSearch}>
+            Buscar
+          </button>
         </div>
       </div>
     </div>
