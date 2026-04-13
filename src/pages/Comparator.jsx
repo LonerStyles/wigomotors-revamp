@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import autosData from "../catalogo.json";
 import "../styles/Comparator.css";
 import { WineOff } from "lucide-react";
@@ -117,7 +118,9 @@ export default function Comparator() {
                     <span className="car-price">
                       ${auto.precioUsd.toLocaleString()}
                     </span>
-                    <button className="btn-action">COTIZAR</button>
+                    <Link to={`/detalle/${auto.id}`}>
+                      <button className="btn-action">COTIZAR</button>
+                    </Link>
                   </>
                 ) : (
                   <div

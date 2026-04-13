@@ -8,6 +8,7 @@ import Details from "./pages/Details";
 import Comparator from "./pages/Comparator";
 import Contacto from "./pages/Contacto";
 import TestDrive from "./pages/TestDrive";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/comparar" element={<Comparator />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/test-drive" element={<TestDrive />} />
+        <Route path="*" element={<NotFound/>}/>
       </Routes>
       <Footer />
     </>
